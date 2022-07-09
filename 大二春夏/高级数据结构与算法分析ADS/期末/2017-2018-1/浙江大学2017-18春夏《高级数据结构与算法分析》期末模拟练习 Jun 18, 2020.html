@@ -1,0 +1,658 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>浙江大学2017-18春夏《高级数据结构与算法分析》期末模拟练习</title>
+  <style>.paper {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", "Lantinghei SC", "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+.paper *,
+.paper *::before,
+.paper *::after {
+  box-sizing: border-box;
+}
+.paper h1,
+.paper h2,
+.paper h3,
+.paper h4,
+.paper h5,
+.paper h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.paper p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.paper pre,
+.paper code,
+.paper kbd,
+.paper samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+}
+.paper pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+.paper .ques-view > p {
+  margin-top: 0;
+}
+.paper hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+.paper .result table {
+  width: 100%;
+}
+.paper .result th,
+.paper .result td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.paper .result pre {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.ques-view, .rendered-markdown {
+  line-height: 1.5;
+}
+.ques-view p, .rendered-markdown p {
+  margin: 0.5em 0;
+}
+.ques-view h1, .rendered-markdown h1, .ques-view h2, .rendered-markdown h2, .ques-view h3, .rendered-markdown h3, .ques-view h4, .rendered-markdown h4, .ques-view h5, .rendered-markdown h5, .ques-view h6, .rendered-markdown h6 {
+  margin: 0.8em 0;
+}
+.ques-view img, .rendered-markdown img {
+  max-width: 100%;
+}
+.ques-view .ques-list, .rendered-markdown .ques-list {
+  padding-left: 50px;
+}
+.ques-view .ques-list li, .rendered-markdown .ques-list li {
+  position: relative;
+  list-style-type: upper-alpha;
+}
+.ques-view .ques-list input, .rendered-markdown .ques-list input {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  margin-top: -7px;
+}
+.ques-view textarea, .rendered-markdown textarea {
+  border-radius: 2px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+.ques-view code, .rendered-markdown code {
+  font-size: 12px;
+  background: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #e4e4e4;
+  padding: 0 3px;
+  color: #e74c3c;
+  margin: 0 2px;
+}
+.ques-view pre, .rendered-markdown pre {
+  padding: 6px 12px;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  word-break: break-all;
+}
+.ques-view pre code, .rendered-markdown pre code {
+  background: none;
+  border: none;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+.ques-view hr, .rendered-markdown hr {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+.ques-view blockquote, .rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: #f4f4f4;
+  border-left: 4px solid #ddd;
+}
+.ques-view table, .rendered-markdown table {
+  margin: 0 auto;
+}
+.ques-view table th, .rendered-markdown table th, .ques-view table td, .rendered-markdown table td {
+  border: 1px solid #ddd;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+.ques-view .ques-score, .rendered-markdown .ques-score {
+  color: #999;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: #f4f4f4;
+  border-left: 4px solid #ddd;
+}
+.rendered-markdown blockquote p {
+  margin-bottom: 0;
+}
+.rendered-markdown table td, .rendered-markdown table th {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.rendered-markdown p:first-child {
+  margin: 0;
+}
+.katex-mathml {
+  display: none;
+}
+.code {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Monaco, Courier, "Courier New", monospace;
+}
+</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css" integrity="sha256-tkzDFSl16wERzhCWg0ge2tON2+D6Qe9iEaJqM4ZGd4E=" crossorigin="anonymous">
+</head>
+<body>
+
+<div><div class="paper" style="max-width:940px;margin:auto" data-reactroot=""><div style="padding:16px;text-align:center;font-size:24px;font-weight:bold">浙江大学2017-18春夏《高级数据结构与算法分析》期末模拟练习</div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">开始时间</span><span style="margin-left:8px">01/01/2016 8:00:00 AM</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">结束时间</span><span style="margin-left:8px">01/18/2038 8:00:00 AM</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">答题时长</span><span style="margin-left:8px">120分钟</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">考生</span><span style="margin-left:8px">宋炜铁</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">得分</span><span style="margin-left:8px">79</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">总分</span><span style="margin-left:8px">100</span></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">判断题</span><span>得分：20</span><span style="margin-left:20px">总分：30</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-1</div><div style="overflow:auto"><div><div class="ques-view"><p>In the Activity Selection problem, consider any non-empty set of activities <span class="katex"><span class="katex-mathml"><math><mrow><mi>S</mi></mrow>S</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.05764em;" class="mord mathit">S</span></span></span></span>, and let <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>a</mi><mi>m</mi></msub></mrow>a_m</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.58056em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> be an activity in <span class="katex"><span class="katex-mathml"><math><mrow><mi>S</mi></mrow>S</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.05764em;" class="mord mathit">S</span></span></span></span> with the<strong><em> shortest lasting time.</em></strong> Then <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>a</mi><mi>m</mi></msub></mrow>a_m</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.58056em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">m</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> must be included in some maximum-size subset of mutually compatible activities of <span class="katex"><span class="katex-mathml"><math><mrow><mi>S</mi></mrow>S</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.05764em;" class="mord mathit">S</span></span></span></span>.    <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques1" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques1" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-2</div><div style="overflow:auto"><div><div class="ques-view"><p>A boolean formula is in <strong>disjunctive normal form</strong> (DNF) if it is a disjunction (OR) of one or more conjunctions (AND) of one or more literals. A literal is a variable or its negation. For example, the formula (x ∧ ¬y ∧ z) ∨ (¬x ∧ z) ∨ (w ∧ y ∧ ¬z) is a DNF formula.  In DNF-Sat you are given a DNF formula, and the goal is to tell whether that formula is satisfiable. </p>
+<p>We claim that the problem DNF-Sat is in P.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques2" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques2" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-3</div><div style="overflow:auto"><div><div class="ques-view"><p>In a Red-Black tree, the path from the root to the farthest leaf is no more than twice as long as the path from the root to the nearest leaf.   <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques3" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques3" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-4</div><div style="overflow:auto"><div><div class="ques-view"><p>The set cover problem is one of Karp's 21 NP-complete problems. Given a set of elements <span class="katex"><span class="katex-mathml"><math><mrow><mi>U</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo separator="true">,</mo><mi>n</mi><mo>}</mo></mrow>U=\{1,2,...,n\}</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">U</span><span class="mrel">=</span><span class="mopen">{</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">2</span><span class="mpunct">,</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mord mathrm">.</span><span class="mpunct">,</span><span class="mord mathit">n</span><span class="mclose">}</span></span></span></span> (called the universe) and a collection <span class="katex"><span class="katex-mathml"><math><mrow><mi>S</mi></mrow>S</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.05764em;" class="mord mathit">S</span></span></span></span> of <span class="katex"><span class="katex-mathml"><math><mrow><mi>k</mi></mrow>k</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.69444em;" class="strut"></span><span style="height:0.69444em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.03148em;" class="mord mathit">k</span></span></span></span> sets whose union equals the universe, and and a cost function <span class="katex"><span class="katex-mathml"><math><mrow><mi>c</mi><mi>o</mi><mi>s</mi><mi>t</mi><mo>:</mo><mi>S</mi><mo>→</mo><msup><mi>Q</mi><mo>+</mo></msup></mrow>cost:S\rightarrow Q^+</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.771331em;" class="strut"></span><span style="height:0.9657709999999999em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">c</span><span class="mord mathit">o</span><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mrel">:</span><span style="margin-right:0.05764em;" class="mord mathit">S</span><span class="mrel">→</span><span class="mord"><span class="mord mathit">Q</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">+</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>, the weighted set cover problem is to identify the smallest cost of sub-collection of <span class="katex"><span class="katex-mathml"><math><mrow><mi>S</mi></mrow>S</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.05764em;" class="mord mathit">S</span></span></span></span> whose union equals the universe. Consider an approximation algorithm as follows:</p>
+<pre><code>C = null
+while ( C!=U ) {
+    for each S[i], calculate the cost-effectiveness a[i] = cost(S[i]) / |S[i]-C|
+    find the best cost-effective set, say S[j]
+    pick S[j]
+    C = C union S[j]
+}
+output the picked sets
+</code></pre><p>If <span class="katex"><span class="katex-mathml"><math><mrow><mi>P</mi><mo>≠</mo><mi>N</mi><mi>P</mi></mrow>P\neq NP</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.716em;" class="strut"></span><span style="height:0.9309999999999999em;vertical-align:-0.215em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">P</span><span class="mrel">≠</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.13889em;" class="mord mathit">P</span></span></span></span>, we can't find a constant <span class="katex"><span class="katex-mathml"><math><mrow><mi>ρ</mi><mo>∈</mo><msup><mi>N</mi><mo>+</mo></msup></mrow>\rho\in N^+</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.771331em;" class="strut"></span><span style="height:0.9657709999999999em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">ρ</span><span class="mrel">∈</span><span class="mord"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mbin mtight">+</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>, so that the approximation ratio of the above algorithm is <span class="katex"><span class="katex-mathml"><math><mrow><mi>ρ</mi></mrow>\rho</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.625em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">ρ</span></span></span></span>. </p>
+<p><span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques4" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques4" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-5</div><div style="overflow:auto"><div><div class="ques-view"><p>A leftist heap with the null path length of the root being <span class="katex"><span class="katex-mathml"><math><mrow><mi>r</mi></mrow>r</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">r</span></span></span></span> must have at least <span class="katex"><span class="katex-mathml"><math><mrow><msup><mn>2</mn><mrow><mi>r</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow>2^{r+1}-1</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8141079999999999em;" class="strut"></span><span style="height:0.897438em;vertical-align:-0.08333em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathrm">2</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span style="margin-right:0.02778em;" class="mord mathit mtight">r</span><span class="mbin mtight">+</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mbin">−</span><span class="mord mathrm">1</span></span></span></span> nodes.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques5" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques5" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-6</div><div style="overflow:auto"><div><div class="ques-view"><p>In a Turnpike Reconstruction problem, given the distance set <span class="katex"><span class="katex-mathml"><math><mrow><mi>D</mi></mrow>D</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">D</span></span></span></span> = { 1, 2, 2, 3, 3, 4, 5, 6, 6, 8 }, it is impossible to have a point placed at 3.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques6" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques6" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-7</div><div style="overflow:auto"><div><div class="ques-view"><p>While accessing a term by hashing in an inverted file index, range searches are expensive.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques7" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques7" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-8</div><div style="overflow:auto"><div><div class="ques-view"><p>Local search algorithm can be used to solve lots of classic problems, such as SAT and <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span>-Queen problems.  Define the configuration of SAT to be <span class="katex"><span class="katex-mathml"><math><mrow><mi>X</mi></mrow>X</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.07847em;" class="mord mathit">X</span></span></span></span> = vector of assignments of <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> boolean variables, and that of <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span>-Queen to be <span class="katex"><span class="katex-mathml"><math><mrow><mi>Y</mi></mrow>Y</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.22222em;" class="mord mathit">Y</span></span></span></span> =  positions of the <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> queens in each column.  The sizes of the search spaces of SAT and <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span>-Queen are <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><msup><mn>2</mn><mi>N</mi></msup><mo>)</mo></mrow>O(2^N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8413309999999999em;" class="strut"></span><span style="height:1.0913309999999998em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathrm">2</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span style="margin-right:0.10903em;" class="mord mathit mtight">N</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mi>N</mi></msup><mo>)</mo></mrow>O(N^N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8413309999999999em;" class="strut"></span><span style="height:1.0913309999999998em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span style="margin-right:0.10903em;" class="mord mathit mtight">N</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>, respectively.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques8" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques8" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-9</div><div style="overflow:auto"><div><div class="ques-view"><p>If devide-and-conquer strategy is used to find the closest pair of points in a plane, unless the points are sorted not only by their <span class="katex"><span class="katex-mathml"><math><mrow><mi>x</mi></mrow>x</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> coordinates but also by their <span class="katex"><span class="katex-mathml"><math><mrow><mi>y</mi></mrow>y</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.625em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.03588em;" class="mord mathit">y</span></span></span></span> coordinates, it would be impossible to solve it in a time of  <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(NlogN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> is the number of points.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques9" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques9" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-10</div><div style="overflow:auto"><div><div class="ques-view"><p>Inserting a number into a binomial heap with 15 nodes costs less time than inserting a number into a binomial heap with 19 nodes. <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques10" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques10" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-11</div><div style="overflow:auto"><div><div class="ques-view"><p>The weighted Activity Selection problem with weights in the set {1, 2} can be solved optimally by the same greedy algorithm used for the unweighted case.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques11" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques11" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-12</div><div style="overflow:auto"><div><div class="ques-view"><p>To solve the Maximum Finding problem with parallel Random Sampling method, <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow>T(n) = O(1)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><mrow><mi>W</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow>W(n) = O(n)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">W</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> can be achieved with <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow>O(n)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> processors.   <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques12" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques12" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-13</div><div style="overflow:auto"><div><div class="ques-view"><p>Reviewing the randomized QuickSort in our course, we always select a central splitter as a pivot before recursions, make sure that each side contains at least <span class="katex"><span class="katex-mathml"><math><mrow><mi>n</mi><mi mathvariant="normal">/</mi><mn>4</mn></mrow>n/4</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span><span class="mord mathrm">/</span><span class="mord mathrm">4</span></span></span></span> elements.  However, as the same as the deterministic QuickSort, the <strong>worst case running time</strong> of the randomized QuickSort is still <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>)</mo></mrow>O(N^2)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8141079999999999em;" class="strut"></span><span style="height:1.064108em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span>.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques13" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques13" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-14</div><div style="overflow:auto"><div><div class="ques-view"><p>If <span class="katex"><span class="katex-mathml"><math><mrow><mi mathvariant="normal">Φ</mi></mrow>\Phi</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">Φ</span></span></span></span> is a potential function associated with a data structure <span class="katex"><span class="katex-mathml"><math><mrow><mi>S</mi></mrow>S</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.05764em;" class="mord mathit">S</span></span></span></span>, then <span class="katex"><span class="katex-mathml"><math><mrow><mn>3</mn><mi mathvariant="normal">Φ</mi></mrow>3 \Phi</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span><span class="mord mathrm">Φ</span></span></span></span> is also a potential function that can be associated with <span class="katex"><span class="katex-mathml"><math><mrow><mi>S</mi></mrow>S</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.05764em;" class="mord mathit">S</span></span></span></span>. Moreover, the amortized running time of each operation with respect to <span class="katex"><span class="katex-mathml"><math><mrow><mn>3</mn><mi mathvariant="normal">Φ</mi></mrow>3 \Phi</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">3</span><span class="mord mathrm">Φ</span></span></span></span> is at most triple the amortized running time of the operation with respect to <span class="katex"><span class="katex-mathml"><math><mrow><mi mathvariant="normal">Φ</mi></mrow>\Phi</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">Φ</span></span></span></span>.  <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques14" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques14" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（2 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-15</div><div style="overflow:auto"><div><div class="ques-view"><p>If there are 81 runs to be merged using 4 taps for 3-way merges, then distributing the runs unevenly as (12, 24, 45) will require less number of passes than the even distribution (27, 27, 27).   <span class="ques-score">(2分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques15" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques15" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">单选题</span><span>得分：51</span><span style="margin-left:20px">总分：60</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-1</div><div style="overflow:auto"><div><div class="ques-view"><p>Suppose that the replacement selection is applied to generate longer runs with a priority queue of size 4. Given the sequence of numbers { 11, 81, 17, 12, 94, 96, 30, 28, 35, 41, 58, 99, 15 }.  Which of the following gives the second output run?   <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques16" type="radio"> 28 35 94 96  </label></li>
+<li><label><input disabled name="ques16" type="radio"> 28 35 41 58 94 96 99  </label></li>
+<li><label><input disabled name="ques16" type="radio"> 28 35 41 58   </label></li>
+<li><label><input disabled checked="" name="ques16" type="radio"> 28 35 41 58 99</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-2</div><div style="overflow:auto"><div><div class="ques-view"><p>Suppose that the devide-and-conquer strategy is used to find the maximum and the minimum of <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> positive numbers.  At each step, the problem is divided into 2 sub-problems of size <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow>N/2</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span>. Then the time recurrences is <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>N</mi><mo>)</mo><mo>=</mo><mn>2</mn><mi>T</mi><mo>(</mo><mi>N</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mo>+</mo><mi>f</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>T(N) = 2T(N/2)+f(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">2</span><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span><span class="mclose">)</span><span class="mbin">+</span><span style="margin-right:0.10764em;" class="mord mathit">f</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span>, where <span class="katex"><span class="katex-mathml"><math><mrow><mi>f</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>f(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10764em;" class="mord mathit">f</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span> is <em>__</em>.    <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques17" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi mathvariant="normal">Ω</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>\Omega (N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">Ω</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques17" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow>O(1)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques17" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow>N/2</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span></label></li>
+<li><label><input disabled name="ques17" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi mathvariant="normal">Θ</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>\Theta (logN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">Θ</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-3</div><div style="overflow:auto"><div><div class="ques-view"><p>Assume that you are a real world Chinese postman, which have learned an awesome course "Advanced Data Structures and Algorithm Analysis" (ADS). Given a 2-dimensional map indicating <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> positions <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>p</mi><mi>i</mi></msub><mo>(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>i</mi></msub><mo>)</mo></mrow>p_i(x_i,y_i)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">p</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mpunct">,</span><span class="mord"><span style="margin-right:0.03588em;" class="mord mathit">y</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span> of your post office and all the addresses you must visit, you'd like to find a shortest path starting and finishing both at your post office, and visit all the addresses at least once in the circuit. Fortunately, you have a magic item "Bamboo copter &amp; Hopter" from "Doraemon", which makes sure that you can fly between two positions using the directed distance (or displacement). </p>
+<p><img alt="Bamboo.jpg" src="https://images.ptausercontent.com/8d0adcd7-1fe2-44d5-a6cf-4aa97ab3346f.jpg" >
+("Bamboo copter &amp; Hopter", japan12.com/bamboo-copter-hopter)</p>
+<p>However, reviewing the knowledge in the ADS course, it is an <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi><mi>P</mi><mi>C</mi></mrow>NPC</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.13889em;" class="mord mathit">P</span><span style="margin-right:0.07153em;" class="mord mathit">C</span></span></span></span> problem! Wasting too much time in finding the shortest path is unwise, so you decide to design a <span class="katex"><span class="katex-mathml"><math><mrow><mn>2</mn><mo>−</mo><mi>a</mi><mi>p</mi><mi>p</mi><mi>r</mi><mi>o</mi><mi>x</mi><mi>i</mi><mi>m</mi><mi>a</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi></mrow>2-approximation</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.65952em;" class="strut"></span><span style="height:0.85396em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">2</span><span class="mbin">−</span><span class="mord mathit">a</span><span class="mord mathit">p</span><span class="mord mathit">p</span><span style="margin-right:0.02778em;" class="mord mathit">r</span><span class="mord mathit">o</span><span class="mord mathit">x</span><span class="mord mathit">i</span><span class="mord mathit">m</span><span class="mord mathit">a</span><span class="mord mathit">t</span><span class="mord mathit">i</span><span class="mord mathit">o</span><span class="mord mathit">n</span></span></span></span> algorithm as follows, to achieve an acceptable solution.</p>
+<pre><code>Compute a minimum spanning tree T connecting all the addresses.
+Regard the post office as the root of T.
+Start at the post office.
+Visit the addresses in order of a _____ of T.
+Finish at the post office.
+</code></pre><p>There are several methods of traversal which can be filled in the blank of the above algorithm. Assume that <span class="katex"><span class="katex-mathml"><math><mrow><mi>P</mi><mo>≠</mo><mi>N</mi><mi>P</mi></mrow>P\neq NP</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.716em;" class="strut"></span><span style="height:0.9309999999999999em;vertical-align:-0.215em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">P</span><span class="mrel">≠</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.13889em;" class="mord mathit">P</span></span></span></span>, how many methods of traversal listed below can fulfill the requirement? <span class="ques-score">(3分)</span></p>
+<ul>
+<li>Level-Order Traversal</li>
+<li>Pre-Order Traversal</li>
+<li>Post-Order Traversal</li>
+</ul>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques18" type="radio"> 0</label></li>
+<li><label><input disabled name="ques18" type="radio"> 1</label></li>
+<li><label><input disabled checked="" name="ques18" type="radio"> 2</label></li>
+<li><label><input disabled name="ques18" type="radio"> 3</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-4</div><div style="overflow:auto"><div><div class="ques-view"><p>Let X be a problem that belongs to the class NP. Then which one of the following is <strong>TRUE</strong>? <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques19" type="radio"> There is no polynomial time algorithm for X.</label></li>
+<li><label><input disabled name="ques19" type="radio"> If X can be solved deterministically in polynomial time, then P = NP.</label></li>
+<li><label><input disabled checked="" name="ques19" type="radio"> If X is NP-hard, then it is NP-complete.</label></li>
+<li><label><input disabled name="ques19" type="radio"> X may be undecidable.</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-5</div><div style="overflow:auto"><div><div class="ques-view"><p>The potential of a skew heap is defined to be the total number of right heavy nodes.  The weight of a node, <span class="katex"><span class="katex-mathml"><math><mrow><mi>w</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow>w(x)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02691em;" class="mord mathit">w</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mclose">)</span></span></span></span>, is defined to be the number of descendants of <span class="katex"><span class="katex-mathml"><math><mrow><mi>x</mi></mrow>x</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> (including <span class="katex"><span class="katex-mathml"><math><mrow><mi>x</mi></mrow>x</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span>).  A non-root node is said to be <strong>heavy</strong> if its weight is greater than half the weight of its parent.</p>
+<p> <strong><em>Lemma 1</em></strong>: At most one child is heavy, of all children of any node.</p>
+<p><strong><em>Lemma 2</em></strong>: On any path from node <span class="katex"><span class="katex-mathml"><math><mrow><mi>x</mi></mrow>x</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span> down to a descendant <span class="katex"><span class="katex-mathml"><math><mrow><mi>y</mi></mrow>y</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.625em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.03588em;" class="mord mathit">y</span></span></span></span>, there are at most <span class="katex"><span class="katex-mathml"><math><mrow><mo>⌊</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mfrac><mrow><mi>w</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mrow><mi>w</mi><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mfrac><mo>⌋</mo></mrow>\lfloor log_2 \frac{w(x)}{w(y)} \rfloor</math></span><span aria-hidden="true" class="katex-html"><span style="height:1.01em;" class="strut"></span><span style="height:1.53em;vertical-align:-0.52em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mopen">⌊</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span class="mord"><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.34500000000000003em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span style="margin-right:0.02691em;" class="mord mathit mtight">w</span><span class="mopen mtight">(</span><span style="margin-right:0.03588em;" class="mord mathit mtight">y</span><span class="mclose mtight">)</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span style="margin-right:0.02691em;" class="mord mathit mtight">w</span><span class="mopen mtight">(</span><span class="mord mathit mtight">x</span><span class="mclose mtight">)</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span><span class="mclose">⌋</span></span></span></span> light nodes, excluding <span class="katex"><span class="katex-mathml"><math><mrow><mi>x</mi></mrow>x</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">x</span></span></span></span>. In particular, any path in an <span class="katex"><span class="katex-mathml"><math><mrow><mi>n</mi></mrow>n</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>-node tree contains at most <span class="katex"><span class="katex-mathml"><math><mrow><mo>⌊</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo>⌋</mo></mrow>\lfloor log_2 n \rfloor </math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mopen">⌊</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span class="mord"><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.03588em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mord mathit">n</span><span class="mclose">⌋</span></span></span></span> light nodes.</p>
+<p>Define the following functions:</p>
+<ul>
+<li><em>makeheap</em> : create a new, empty heap</li>
+<li><em>findmin</em> : return the minimum key in the heap</li>
+<li><em>insert</em> : insert a key in the heap</li>
+<li><em>deletemin</em> : delete the minimum key from the heap</li>
+<li><em>merge</em> : merge two heaps</li>
+</ul>
+<p>Then for any <span class="katex"><span class="katex-mathml"><math><mrow><mi>n</mi></mrow>n</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>-node skew heaps, which of the following is <strong>FALSE</strong>? <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques20" type="radio"> The amortized time of a merge operation is <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow>O(logn)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques20" type="radio"> The amortized time of a makeheap operation is <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow>O(1)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques20" type="radio"> The amortized time of a findmin is <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow>O(1)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques20" type="radio"> The amortized time of a deletemin operation is <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow>O(1)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-6</div><div style="overflow:auto"><div><div class="ques-view"><p>Which one of the following statements is <strong>TRUE</strong>?   <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled checked="" name="ques21" type="radio"> <img alt="a.png" src="https://images.ptausercontent.com/b0fec235-bdb4-410b-a754-13f416b605a1.png" >
+may be a leftist heap</label></li>
+<li><label><input disabled name="ques21" type="radio"> <img alt="b.png" src="https://images.ptausercontent.com/e1030de3-e9de-4543-893f-0c97115b17b2.png" >
+may be a leftist heap</label></li>
+<li><label><input disabled name="ques21" type="radio"> <img alt="c.png" src="https://images.ptausercontent.com/1c31a974-8f5c-4887-ac5a-54ad69189947.png" >
+may be a leftist heap</label></li>
+<li><label><input disabled name="ques21" type="radio"> <img alt="c.png" src="https://images.ptausercontent.com/b295dcab-b064-4e22-b6b3-9698e9edbf2f.png" >
+may be a skew heap</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-7</div><div style="overflow:auto"><div><div class="ques-view"><p>To delete X from a splay tree, the operations are: (1) Find X; (2)Remove X; (3) FindMin(<span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>R</mi></msub></mrow>T_R</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span style="margin-right:0.00773em;" class="mord mathit mtight">R</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span>); and the last operation is: <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques22" type="radio"> Make <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>L</mi></msub></mrow>T_L</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">L</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> the right child of the root of <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>R</mi></msub></mrow>T_R</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span style="margin-right:0.00773em;" class="mord mathit mtight">R</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques22" type="radio"> Make <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>L</mi></msub></mrow>T_L</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">L</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> the left child of the root of <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>R</mi></msub></mrow>T_R</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span style="margin-right:0.00773em;" class="mord mathit mtight">R</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></label></li>
+<li><label><input disabled name="ques22" type="radio"> Make <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>R</mi></msub></mrow>T_R</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span style="margin-right:0.00773em;" class="mord mathit mtight">R</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> the right child of the root of <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>L</mi></msub></mrow>T_L</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">L</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></label></li>
+<li><label><input disabled name="ques22" type="radio"> Make <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>R</mi></msub></mrow>T_R</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span style="margin-right:0.00773em;" class="mord mathit mtight">R</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> the left child of the root of <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>T</mi><mi>L</mi></msub></mrow>T_L</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.13889em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">L</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-8</div><div style="overflow:auto"><div><div class="ques-view"><p>How many of the following statements is/are <strong>TRUE</strong>?   <span class="ques-score">(3分)</span></p>
+<ul>
+<li>The 0-1 knapsack problem cannot be solved by any local search algorithm.</li>
+<li>The metropolis algorithm always improves the gradient descent algorithm.</li>
+<li>In some cases, the state-flipping algorithm cannot terminate.</li>
+<li>Unless <span class="katex"><span class="katex-mathml"><math><mrow><mi>P</mi><mo>=</mo><mi>N</mi><mi>P</mi></mrow>P=NP</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">P</span><span class="mrel">=</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.13889em;" class="mord mathit">P</span></span></span></span>, there is no <span class="katex"><span class="katex-mathml"><math><mrow><mi>ρ</mi></mrow>\rho</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.625em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">ρ</span></span></span></span>-approximation for the maximum cut problem for any <span class="katex"><span class="katex-mathml"><math><mrow><mi>ρ</mi><mo>&lt;</mo><mn>2</mn></mrow>\rho&lt;2</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.64444em;" class="strut"></span><span style="height:0.8388800000000001em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">ρ</span><span class="mrel">&lt;</span><span class="mord mathrm">2</span></span></span></span>.</li>
+</ul>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques23" type="radio"> 0</label></li>
+<li><label><input disabled name="ques23" type="radio"> 1</label></li>
+<li><label><input disabled checked="" name="ques23" type="radio"> 2</label></li>
+<li><label><input disabled name="ques23" type="radio"> 3</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-9</div><div style="overflow:auto"><div><div class="ques-view"><p>In a binomial queue with <span class="katex"><span class="katex-mathml"><math><mrow><mn>1</mn><mn>5</mn><mn>0</mn></mrow>150</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.64444em;" class="strut"></span><span style="height:0.64444em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span><span class="mord mathrm">5</span><span class="mord mathrm">0</span></span></span></span> nodes, how many nodes have depth <span class="katex"><span class="katex-mathml"><math><mrow><mn>1</mn></mrow>1</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.64444em;" class="strut"></span><span style="height:0.64444em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">1</span></span></span></span>  (the root has depth <span class="katex"><span class="katex-mathml"><math><mrow><mn>0</mn></mrow>0</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.64444em;" class="strut"></span><span style="height:0.64444em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">0</span></span></span></span>)? <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques24" type="radio"> 4</label></li>
+<li><label><input disabled name="ques24" type="radio"> 8</label></li>
+<li><label><input disabled checked="" name="ques24" type="radio"> 14</label></li>
+<li><label><input disabled name="ques24" type="radio"> Cannot be determined</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-10</div><div style="overflow:auto"><div><div class="ques-view"><p>Insert { 5, 1, 7, 8, 21, 2, 12, 19, 13, 0 } into an initially empty 2-3 tree (with splitting).  Which one of the following statements is FALSE? <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled checked="" name="ques25" type="radio"> 13 and 19 are in the same node</label></li>
+<li><label><input disabled name="ques25" type="radio"> the parent of the node containing 8 has 3 children</label></li>
+<li><label><input disabled name="ques25" type="radio"> the first key stored in the root is 12</label></li>
+<li><label><input disabled name="ques25" type="radio"> there are 5 leaf nodes</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-11</div><div style="overflow:auto"><div><div class="ques-view"><p>When doing amortized analysis, which one of the following statements is FALSE? <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques26" type="radio"> Aggregate analysis shows that for all <span class="katex"><span class="katex-mathml"><math><mrow><mi>n</mi></mrow>n</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span>, a sequence of <span class="katex"><span class="katex-mathml"><math><mrow><mi>n</mi></mrow>n</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.43056em;" class="strut"></span><span style="height:0.43056em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathit">n</span></span></span></span> operations takes worst-case time <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow>T(n)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span> in total.  Then the amortized cost per operation is therefore <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>n</mi><mo>)</mo><mi mathvariant="normal">/</mi><mi>n</mi></mrow>T(n)/n</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mord mathrm">/</span><span class="mord mathit">n</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques26" type="radio"> For potential method, a good potential function should always assume its maximum at the start of the sequence</label></li>
+<li><label><input disabled name="ques26" type="radio"> For accounting method, when an operation's amortized cost exceeds its actual cost, we save the difference as credit to pay for later operations whose amortized cost is less than their actual cost</label></li>
+<li><label><input disabled name="ques26" type="radio"> The difference between aggregate analysis and accounting method is that the later one assumes that the amortized costs of the operations may differ from each other</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-12</div><div style="overflow:auto"><div><div class="ques-view"><p>Which one of the following problems can be best solved by dynamic programming? <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques27" type="radio"> Mergesort</label></li>
+<li><label><input disabled name="ques27" type="radio"> Closest pair of points problem</label></li>
+<li><label><input disabled name="ques27" type="radio"> Quicksort</label></li>
+<li><label><input disabled checked="" name="ques27" type="radio"> Longest common subsequence problem</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-13</div><div style="overflow:auto"><div><div class="ques-view"><p>Which of the following is <strong>TRUE</strong> about NP-Complete and NP-Hard problems? <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques28" type="radio"> If we want to prove that a problem X is NP-Hard, we take a known NP-Hard problem Y and reduce Y to X in polynomial time.</label></li>
+<li><label><input disabled name="ques28" type="radio"> The first problem that was proved to be NP-complete was the circuit satisfiability problem.</label></li>
+<li><label><input disabled name="ques28" type="radio"> NP-complete is a subset of NP-Hard</label></li>
+<li><label><input disabled checked="" name="ques28" type="radio"> All of the other three.</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-14</div><div style="overflow:auto"><div><div class="ques-view"><p>Given a linked list containg <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> nodes.  Our task is to remove all the nodes. At each step, we randomly choose one node in the current list, then delete the selected node together with all the nodes after it. Here we assume that each time we choose one node uniformly among all the remaining nodes. What is the expected number of steps to remove all the nodes?
+<span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques29" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi mathvariant="normal">Θ</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>\Theta (log N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord mathrm">Θ</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques29" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mi>e</mi></mrow>N/e</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mord mathrm">/</span><span class="mord mathit">e</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques29" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow>N/2</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span></span></span></span></label></li>
+<li><label><input disabled name="ques29" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><msqrt><mi>N</mi></msqrt></mrow>\sqrt N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.9266650000000001em;" class="strut"></span><span style="height:1.04em;vertical-align:-0.11333500000000002em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord sqrt"><span style="top:-0.08666499999999999em;" class="sqrt-sign"><span class="style-wrap reset-textstyle textstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span style="margin-right:0.10903em;" class="mord mathit">N</span></span><span style="top:-0.846665em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-15</div><div style="overflow:auto"><div><div class="ques-view"><p>There are 8000 documents in the database. The statistic data for one query are shown in the following table. The precision is: __    <span class="ques-score">(3分)</span></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Relevant</th>
+<th>Irrelevant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Retrieved</td>
+<td>1000</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>Not Retrieved</td>
+<td>2000</td>
+<td>4000</td>
+</tr>
+</tbody>
+</table>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques30" type="radio"> 12.5%</label></li>
+<li><label><input disabled name="ques30" type="radio"> 20%</label></li>
+<li><label><input disabled name="ques30" type="radio"> 33%</label></li>
+<li><label><input disabled checked="" name="ques30" type="radio"> 50%</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-16</div><div style="overflow:auto"><div><div class="ques-view"><p>Given 4 cases of frequences of four characters. In which case(s) that the total bits taken by Huffman codes are the same as that of the ordinary equal length codes? <span class="ques-score">(3分)</span></p>
+<ul>
+<li>(1) 1 1 2 4</li>
+<li>(2) 1 2 3 4</li>
+<li>(3) 2 2 3 3</li>
+<li>(4) 2 2 3 4     </li>
+</ul>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled checked="" name="ques31" type="radio"> (3) only</label></li>
+<li><label><input disabled name="ques31" type="radio"> (3) and (4)</label></li>
+<li><label><input disabled name="ques31" type="radio"> (1), (2) and (4)</label></li>
+<li><label><input disabled name="ques31" type="radio"> None</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-17</div><div style="overflow:auto"><div><div class="ques-view"><p>When solving a problem with input size <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> by divide and conquer, if at each step, the problem is divided into 4 sub-problems of size <span class="katex"><span class="katex-mathml"><math><mrow><msqrt><mi>N</mi></msqrt></mrow>\sqrt N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.9266650000000001em;" class="strut"></span><span style="height:1.04em;vertical-align:-0.11333500000000002em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord sqrt"><span style="top:-0.08666499999999999em;" class="sqrt-sign"><span class="style-wrap reset-textstyle textstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span style="margin-right:0.10903em;" class="mord mathit">N</span></span><span style="top:-0.846665em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span>, and they are conquered in <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(logN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span>. Which one of the following is the closest to the overall time complexity <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>T(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span>?  Suppose that <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow>T(2) = O(1)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathrm">2</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> and all related root values are integers. <span class="ques-score">(3分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques32" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(logN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques32" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><msup><mi>g</mi><mn>2</mn></msup><mi>N</mi><mo>)</mo></mrow>O(log^2N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8141079999999999em;" class="strut"></span><span style="height:1.064108em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span class="mord"><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques32" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>O(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques32" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(loglogN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-18</div><div style="overflow:auto"><div><div class="ques-view"><p>The following psuedo-code is for solving the Profix Sums problem parallely, where the input <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> numbers are stored in the array <code>A</code>.  Which of the following gives the time and work load of the algorithm? <span class="ques-score">(3分)</span></p>
+<pre><code>for Pi , 1 &lt;= i &lt;= n pardo
+    B(0, i) := A(i)
+for h = 1 to log(n)
+    for i, 1 &lt;= i&lt;= n/(2^h) pardo
+        B(h, i) := B(h-1, 2*i-1) + B(h-1, 2*i)
+for h = log(n) to 0
+    for i even, 1 &lt;= i&lt;= n/(2^h) pardo
+        C(h, i) := C(h+1, i/2)
+    for i = 1 pardo
+        C(h, 1) := B(h, 1)
+    for i odd, 3 &lt;= i &lt;= n/(2^h) pardo
+        C(h, i) := C(h+1, (i-1)/2) + B(h, i)
+for Pi , 1 &lt;= i&lt;= n pardo
+    Output C(0, i)   
+</code></pre><ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques33" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo><mo separator="true">,</mo><mi>W</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow>T(n) = O ( log n ), W(n) = O( n log n )</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mpunct">,</span><span style="margin-right:0.13889em;" class="mord mathit">W</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques33" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo separator="true">,</mo><mi>W</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow>T(n) = O ( n ), W(n) = O( n )</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mpunct">,</span><span style="margin-right:0.13889em;" class="mord mathit">W</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques33" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo><mo separator="true">,</mo><mi>W</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow>T(n) = O ( log n ), W(n) = O( n )</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mpunct">,</span><span style="margin-right:0.13889em;" class="mord mathit">W</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques33" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo separator="true">,</mo><mi>W</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><mi>O</mi><mo>(</mo><mi>n</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo>)</mo></mrow>T(n) = O ( n ), W(n) = O( n log n )</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mpunct">,</span><span style="margin-right:0.13889em;" class="mord mathit">W</span><span class="mopen">(</span><span class="mord mathit">n</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathit">n</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="mord mathit">n</span><span class="mclose">)</span></span></span></span></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-19</div><div style="overflow:auto"><div><div class="ques-view"><p>Delete the minimum number from the binomial queue given in the following figure.  Which one of the following statements must be <strong>FALSE</strong>? <span class="ques-score">(3分)</span></p>
+<p><img alt="binomial_heap.png" src="https://images.ptausercontent.com/0e9369d1-fb09-4168-8d8d-d16e740ed43d.png" ></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques34" type="radio"> there are two binomial trees after deletion, which are <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>B</mi><mn>2</mn></msub></mrow>B_2</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.05017em;" class="mord mathit">B</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.05017em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><mrow><msub><mi>B</mi><mn>3</mn></msub></mrow>B_3</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.83333em;vertical-align:-0.15em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.05017em;" class="mord mathit">B</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.05017em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">3</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques34" type="radio"> 23 and 14 are both the roots of some binomial trees</label></li>
+<li><label><input disabled name="ques34" type="radio"> 21 is the child of 13</label></li>
+<li><label><input disabled name="ques34" type="radio"> 23 and 24 are siblings</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-20</div><div style="overflow:auto"><div><div class="ques-view"><p>Given the following game tree, which node in the right subtree is the first node to be pruned with α-β pruning algorithm?   <span class="ques-score">(3分)</span></p>
+<p><img alt="abtree2.png" src="https://images.ptausercontent.com/d86ea301-88e1-49b3-9e33-3bf845392658.png" ></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques35" type="radio"> a</label></li>
+<li><label><input disabled name="ques35" type="radio"> b</label></li>
+<li><label><input disabled name="ques35" type="radio"> c</label></li>
+<li><label><input disabled checked="" name="ques35" type="radio"> d</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">程序填空题</span><span>得分：4</span><span style="margin-left:20px">总分：6</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">5-1</div><div style="overflow:auto"><div><div class="ques-view"><p>IsRBTree (3)</p>
+<p>The functions <code>IsRBTree</code> is to check if a given binary search tree <code>T</code> is a red-black tree.  Return <code>true</code> if <code>T</code> is, or <code>false</code> if not.</p>
+<p>The red-black tree structure is defined as the following:</p>
+<pre><code>typedef enum { red, black } colors;
+typedef struct RBNode *PtrToRBNode;
+struct RBNode{
+    int Data;
+    PtrToRBNode Left, Right, Parent;
+    int BH; /* black height */
+    colors Color;
+};
+typedef PtrToRBNode RBTree;
+</code></pre><p>Please fill in the blanks.</p>
+<pre><code class="lang-c++">bool IsRBTree( RBTree T )
+{
+    int LeftBH, RightBH;
+    if ( !T ) return true;
+    if ( T-&gt;Color == black ) T-&gt;BH = 1;
+    else {
+         if ( T-&gt;Left &amp;&amp; (T-&gt;Left-&gt;Color == red)) return false;
+         if ( T-&gt;Right &amp;&amp; <input disabled size="47" value="(T->Right->Color == red)" type="text" class="ques-answer"><span class="ques-score">(2分)</span> ) return false;
+    }
+    if ( !T-&gt;Left &amp;&amp; !T-&gt;Right ) return true;
+    if ( <input disabled size="47" value="T->Left || T->Right" type="text" class="ques-answer"><span class="ques-score">(2分)</span>) {
+       if ( T-&gt;Left ) LeftBH = T-&gt;Left-&gt;BH;
+       else LeftBH = 0;
+       if ( T-&gt;Right ) RightBH = T-&gt;Right-&gt;BH;
+       else RightBH = 0;
+       if ( LeftBH == RightBH ) { 
+          <input disabled size="47" value="IsRBTree(T->Left);IsRBTree(T->Right)" type="text" class="ques-answer"><span class="ques-score">(2分)</span>;
+          return true;
+       }
+       else return false;
+    }
+    else return false;
+}
+</code></pre>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">部分正确</span><span>（4 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>序号</th><th>结果</th><th>得分</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>2</td></tr><tr><td>1</td><td>答案错误</td><td>0</td></tr><tr><td>2</td><td>答案正确</td><td>2</td></tr></tbody></table></div></div></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">函数题</span><span>得分：4</span><span style="margin-left:20px">总分：4</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">6-1</div><div style="overflow:auto"><div>AVL Tree Insertion (4分)</div><div><div class="ques-view"><p>You are supposed to implement the <code>Insert</code> function, which inserts an integer <code>Key</code> into an AVL tree <code>T</code>.  The resulting tree must be returned.</p>
+<h3 id="format-of-function-">Format of function:</h3>
+<pre><code class="lang-c++">AVLTree Insert ( int Key, AVLTree T );
+</code></pre>
+<p>where <code>AVLTree</code> is defined as the following:</p>
+<pre><code class="lang-c++">typedef struct AVLNode *PtrToAVLNode;
+struct AVLNode{
+    int Data;
+    PtrToAVLNode Left;
+    PtrToAVLNode Right;
+    int Height;
+};
+typedef PtrToAVLNode AVLTree;
+</code></pre>
+<h3 id="sample-program-of-judge-">Sample program of judge:</h3>
+<pre><code class="lang-c++">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct AVLNode *PtrToAVLNode;
+struct AVLNode{
+    int Data;
+    PtrToAVLNode Left;
+    PtrToAVLNode Right;
+    int Height;
+};
+typedef PtrToAVLNode AVLTree;
+
+AVLTree Insert ( int Key, AVLTree T );
+void PostOrderPrint( AVLTree T ); /* details omitted */
+void InOrderPrint( AVLTree T );   /* details omitted */
+
+int main()
+{
+    int N, Key, i;
+    AVLTree T = NULL;
+
+    scanf("%d", &amp;N);
+    for ( i=0; i&lt;N; i++ ) {
+        scanf("%d", &amp;Key);
+        T = Insert( Key, T );
+    }
+    PostOrderPrint( T );
+    InOrderPrint( T );
+
+    return 0;
+}
+/* Your function will be put here */
+</code></pre>
+<h3 id="sample-input-">Sample Input:</h3>
+<pre><code>7
+31 27 6 67 88 53 15
+</code></pre><h3 id="sample-output-">Sample Output:</h3>
+<pre><code>Post-order: 6 27 15 53 88 67 31
+In-order: 6 15 27 31 53 67 88
+</code></pre></div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GCC</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre>
+
+
+
+int Max(int x, int y){
+    if(x&gt;y) return x;
+    return y;
+}
+
+int CalHeight(AVLTree T){
+    if(!T){
+        return -1;
+    }else{
+        return T-&gt;Height;
+    }
+}
+
+int IsRotate(AVLTree T){
+    if((CalHeight(T-&gt;Left)-CalHeight(T-&gt;Right))==2 || (CalHeight(T-&gt;Left)-CalHeight(T-&gt;Right))== -2){
+        return 1;
+    }
+    return 0;
+}
+
+AVLTree RRRotation(AVLTree T){
+    AVLTree TempNode = T;
+    T = T-&gt;Right;
+    TempNode-&gt;Right = T-&gt;Left;
+    TempNode-&gt;Height = Max(CalHeight(TempNode-&gt;Left),CalHeight(TempNode-&gt;Right))+1;
+    T-&gt;Left = TempNode;
+    T-&gt;Height = Max(CalHeight(T-&gt;Left),CalHeight(T-&gt;Right))+1;
+    return T;
+}
+
+AVLTree LLRotation(AVLTree T){
+    AVLTree TempNode = T;
+    T = T-&gt;Left;
+    TempNode-&gt;Left = T-&gt;Right;
+    TempNode-&gt;Height = Max(CalHeight(TempNode-&gt;Left),CalHeight(TempNode-&gt;Right))+1;
+    T-&gt;Right = TempNode;
+    T-&gt;Height = Max(CalHeight(T-&gt;Left),CalHeight(T-&gt;Right))+1;
+    return T;
+}
+
+AVLTree LRRotation(AVLTree T){
+    T-&gt;Left =RRRotation(T-&gt;Left);
+    T = LLRotation(T);
+    return T;
+}
+
+AVLTree RLRotation(AVLTree T){
+    T-&gt;Right =LLRotation(T-&gt;Right);
+    T = RRRotation(T);
+    return T;
+}
+
+AVLTree RotateTree(AVLTree T, int Key){
+    if(Key &lt; T-&gt;Data){
+        if(Key &lt; T-&gt;Left-&gt;Data){
+            T = LLRotation(T);
+        }else{
+            T = LRRotation(T);
+        }
+    }else if(Key &gt; T-&gt;Data){
+        if(Key &lt; T-&gt;Right-&gt;Data){
+            T = RLRotation(T);
+        }else{
+            T = RRRotation(T);
+        }
+    }
+    return T;
+}
+
+AVLTree InitialTree(AVLTree T, int Key){
+    T = (struct AVLNode*)malloc(sizeof(struct AVLNode));
+    T-&gt;Left = NULL;
+    T-&gt;Right = NULL;
+    T-&gt;Height = 0;
+    T-&gt;Data = Key;
+    return T;
+}
+
+AVLTree Insert ( int Key, AVLTree T ){
+    if(!T){
+        T = InitialTree(T, Key);
+    }else if(Key &lt; T-&gt;Data){
+        T -&gt; Left =Insert(Key, T-&gt;Left);
+        if(IsRotate(T)){
+            T = RotateTree(T, Key);
+        }
+    }else if(Key &gt; T-&gt;Data){
+        T -&gt; Right =Insert(Key, T-&gt;Right);
+        if(IsRotate(T)){
+            T = RotateTree(T, Key);
+        }
+    }
+    T-&gt;Height = Max(CalHeight(T-&gt;Right),CalHeight(T-&gt;Left))+1;
+    return T;
+}
+</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（4 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre>a.c: In function ‘main’:
+a.c:48:5: warning: ignoring return value of ‘scanf’, declared with attribute warn_unused_result [-Wunused-result]
+     scanf(&quot;%d&quot;, &amp;N);
+     ^~~~~~~~~~~~~~~
+a.c:50:9: warning: ignoring return value of ‘scanf’, declared with attribute warn_unused_result [-Wunused-result]
+         scanf(&quot;%d&quot;, &amp;Key);
+         ^~~~~~~~~~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>2</td><td>3.00 ms</td><td>296 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>296 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>3.00 ms</td><td>356 KB</td></tr></tbody></table></div></div></div><hr/></div></div>
+
+</body>
+</html>
