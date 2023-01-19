@@ -15,13 +15,20 @@
 
 # 目录
 
-- [ZJUCourse]([RyanFcr/ZJU_Course: 浙江大学计算机课程资料整理 (github.com)](https://github.com/RyanFcr/ZJU_Course/tree/main))
-
-  - [目录](https://github.com/RyanFcr/ZJU_Course#目录)
-
-  - [大一]([ZJU_Course/大一 at main · RyanFcr/ZJU_Course (github.com)](https://github.com/RyanFcr/ZJU_Course/tree/main/大一))
-    - 
-  - [大二秋冬]([ZJU_Course/大二秋冬 at main · RyanFcr/ZJU_Course · GitHub](https://github.com/RyanFcr/ZJU_Course/tree/main/大二秋冬))
+- ZJU_Course
+  - 大一
+    - C程
+    - 信息安全原理与数学
+    - 史纲
+    - 微积分 Ⅰ
+    - 微积分Ⅱ
+    - 思修
+    - 数学竞赛
+    - 普通物理学Ⅰ（H）
+    - 汇编
+    - 离散数学理论基础
+    - 网络空间安全导论
+  - 大二秋冬
     - 数据结构基础
     - 人工智能基础
     - 军理
