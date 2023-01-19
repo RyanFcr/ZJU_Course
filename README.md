@@ -11,3 +11,4 @@
 - 仓库主要记录自己的学习路径，分享自己的经验，如果觉得本仓库有帮助的话，不妨点个✨ 
 - 推荐学长学姐的仓库
   - https://github.com/Zhang-Each/CourseNoteOfZJUSE
+  - 室友的仓库：https://github.com/CSWellesSun/ZJUCourse
