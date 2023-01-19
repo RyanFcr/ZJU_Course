@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>浙江大学2018-19秋冬《数据结构基础》期中模拟练习</title>
+  <style>.paper {
+  margin: 0;
+  font-family: -apple-system, "PingFang SC", "Lantinghei SC", "Helvetica Neue", "Microsoft Yahei", "Hiragino Sans GB", "Microsoft Sans Serif", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+}
+.paper *,
+.paper *::before,
+.paper *::after {
+  box-sizing: border-box;
+}
+.paper h1,
+.paper h2,
+.paper h3,
+.paper h4,
+.paper h5,
+.paper h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.paper p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.paper pre,
+.paper code,
+.paper kbd,
+.paper samp {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+}
+.paper pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+.paper .ques-view > p {
+  margin-top: 0;
+}
+.paper hr {
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+.paper .result table {
+  width: 100%;
+}
+.paper .result th,
+.paper .result td {
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.paper .result .box {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.ques-view, .rendered-markdown {
+  line-height: 1.5;
+}
+.ques-view p, .rendered-markdown p {
+  margin: 0.5em 0;
+}
+.ques-view h1, .rendered-markdown h1, .ques-view h2, .rendered-markdown h2, .ques-view h3, .rendered-markdown h3, .ques-view h4, .rendered-markdown h4, .ques-view h5, .rendered-markdown h5, .ques-view h6, .rendered-markdown h6 {
+  margin: 0.8em 0;
+}
+.ques-view img, .rendered-markdown img {
+  max-width: 100%;
+}
+.ques-view .ques-list, .rendered-markdown .ques-list {
+  padding-left: 50px;
+}
+.ques-view .ques-list li, .rendered-markdown .ques-list li {
+  position: relative;
+  list-style-type: upper-alpha;
+}
+.ques-view .ques-list input, .rendered-markdown .ques-list input {
+  position: absolute;
+  left: -40px;
+  top: 50%;
+  margin-top: -7px;
+}
+.ques-view textarea, .rendered-markdown textarea {
+  border-radius: 2px;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  min-height: 100px;
+}
+.ques-view code, .rendered-markdown code {
+  font-size: 12px;
+  background: #f7f7f7;
+  border-radius: 3px;
+  border: 1px solid #e4e4e4;
+  padding: 0 3px;
+  color: #e74c3c;
+  margin: 0 2px;
+}
+.ques-view pre, .rendered-markdown pre {
+  padding: 6px 12px;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  word-break: break-all;
+}
+.ques-view pre code, .rendered-markdown pre code {
+  background: none;
+  border: none;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}
+.ques-view hr, .rendered-markdown hr {
+  border: none;
+  border-top: 1px solid #ccc;
+}
+.ques-view blockquote, .rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: #f4f4f4;
+  border-left: 4px solid #ddd;
+}
+.ques-view table, .rendered-markdown table {
+  margin: 0 auto;
+}
+.ques-view table th, .rendered-markdown table th, .ques-view table td, .rendered-markdown table td {
+  border: 1px solid #ddd;
+  padding: 2px 4px;
+  font-size: 12px;
+}
+.ques-view .ques-score, .rendered-markdown .ques-score {
+  color: #999;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.rendered-markdown blockquote {
+  margin: 0.5em 0;
+  padding: 2px 14px;
+  font-size: 12px;
+  background: #f4f4f4;
+  border-left: 4px solid #ddd;
+}
+.rendered-markdown blockquote p {
+  margin-bottom: 0;
+}
+.rendered-markdown table td, .rendered-markdown table th {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+.rendered-markdown p:first-child {
+  margin: 0;
+}
+.katex-mathml {
+  display: none;
+}
+.code {
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Monaco, Courier, "Courier New", monospace;
+}
+</style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css" integrity="sha256-tkzDFSl16wERzhCWg0ge2tON2+D6Qe9iEaJqM4ZGd4E=" crossorigin="anonymous">
+</head>
+<body>
+
+<div><div class="paper" style="max-width:940px;margin:auto" data-reactroot=""><div style="padding:16px;text-align:center;font-size:24px;font-weight:bold">浙江大学2018-19秋冬《数据结构基础》期中模拟练习</div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">开始时间</span><span style="margin-left:8px">01/01/2016 8:00:00 AM</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">结束时间</span><span style="margin-left:8px">01/18/2038 8:00:00 AM</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">答题时长</span><span style="margin-left:8px">90分钟</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">考生</span><span style="margin-left:8px">Raul</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">得分</span><span style="margin-left:8px">92</span></div><div style="width:calc(100% / 3);display:inline-flex"><span style="font-weight:bold;width:56px">总分</span><span style="margin-left:8px">100</span></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">判断题</span><span>得分：12</span><span style="margin-left:20px">总分：15</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-1</div><div style="overflow:auto"><div><div class="ques-view"><p>If there are less than 20 inversions in an integer array, then Insertion Sort will be the best method among Quick Sort, Heap Sort and Insertion Sort.  <span class="ques-score">(3分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques1" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques1" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-2</div><div style="overflow:auto"><div><div class="ques-view"><p>For a sequentially stored linear list of length <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi></mrow>N</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.68333em;" class="strut"></span><span style="height:0.68333em;vertical-align:0em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span>, the time complexities for query and insertion are <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow>O(1)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>O(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span>, respectively.
+<span class="ques-score">(3分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques2" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques2" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-3</div><div style="overflow:auto"><div><div class="ques-view"><p>In a binary search tree, the keys on the same level from left to right must be in sorted (non-decreasing) order.
+<span class="ques-score">(3分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques3" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques3" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-4</div><div style="overflow:auto"><div><div class="ques-view"><p><span class="katex"><span class="katex-mathml"><math><mrow><msup><mi>N</mi><mn>2</mn></msup><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi></mrow>N^2 logN</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8141079999999999em;" class="strut"></span><span style="height:1.008548em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span class="mord"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math><mrow><mi>N</mi><mi>l</mi><mi>o</mi><mi>g</mi><msup><mi>N</mi><mn>2</mn></msup></mrow>N logN^2</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8141079999999999em;" class="strut"></span><span style="height:1.008548em;vertical-align:-0.19444em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span class="mord"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span></span> have the same speed of growth.
+<span class="ques-score">(3分)</span></p><div class="ques-answer ques-tof"><label><input disabled name="ques4" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled checked="" name="ques4" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">1-5</div><div style="overflow:auto"><div><div class="ques-view"><p>If keys are pushed onto a stack in the order {1, 2, 3, 4, 5}, then it is impossible to obtain the output sequence {3, 4, 1, 2, 5}.
+<span class="ques-score">(3分)</span></p><div class="ques-answer ques-tof"><label><input disabled checked="" name="ques5" type="radio">T</label> &nbsp; &nbsp; &nbsp; &nbsp; <label><input disabled name="ques5" type="radio">F</label></div><p></p>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（3 分）</span></div></div></div></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">单选题</span><span>得分：59</span><span style="margin-left:20px">总分：64</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-1</div><div style="overflow:auto"><div><div class="ques-view"><p>For the quicksort implementation with the left pointer stops at an element with the same key as the pivot during the partitioning, but the right pointer does not stop in a similar case, what is the running time when all keys are equal? <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques6" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(logN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques6" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>O(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques6" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(NlogN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques6" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mn>2</mn></msup><mo>)</mo></mrow>O(N^2)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.8141079999999999em;" class="strut"></span><span style="height:1.064108em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span class="mord"><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="msupsub"><span class="vlist"><span style="top:-0.363em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mclose">)</span></span></span></span></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#0a0">答案错误</span><span>（0 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-2</div><div style="overflow:auto"><div><div class="ques-view"><p>Given a quadtree(四叉树) with 3 nodes of degree 2, 2 nodes of degree 3, 4 nodes of degree 4.  The number of leaf nodes in this tree is __. <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques7" type="radio"> 10</label></li>
+<li><label><input disabled name="ques7" type="radio"> 12</label></li>
+<li><label><input disabled checked="" name="ques7" type="radio"> 20</label></li>
+<li><label><input disabled name="ques7" type="radio"> 21</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-3</div><div style="overflow:auto"><div><div class="ques-view"><p>The result of performing three DeleteMin operations in the min-heap {1,3,2,6,7,5,4,15,14,12,9,10,11,13,8} is: <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques8" type="radio"> 4,5,6,7,8,9,10,11,12,13,14,15</label></li>
+<li><label><input disabled checked="" name="ques8" type="radio"> 4,6,5,13,7,10,8,15,14,12,9,11</label></li>
+<li><label><input disabled name="ques8" type="radio"> 4,6,5,12,7,10,8,15,14,9,13,11</label></li>
+<li><label><input disabled name="ques8" type="radio"> 4,5,6,12,7,10,8,15,14,13,9,11</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-4</div><div style="overflow:auto"><div><div class="ques-view"><p>Given input { 110, 119, 7, 911, 114, 120, 122 }.  Which one of the following is the result after the 2nd run of the Least Signification Digit (LSD) radix sort? <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques9" type="radio"> 7, 110, 119, 114, 911, 120, 122</label></li>
+<li><label><input disabled name="ques9" type="radio"> 7, 110, 119, 114, 911, 122, 120</label></li>
+<li><label><input disabled checked="" name="ques9" type="radio"> 7, 110, 911, 114, 119, 120, 122</label></li>
+<li><label><input disabled name="ques9" type="radio"> 110, 120, 911, 122, 114, 7, 119</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-5</div><div style="overflow:auto"><div><div class="ques-view"><p>The recurrent equations for the time complexities of programs P1 and P2 are:</p>
+<ul>
+<li>P1: <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mn>1</mn><mo>)</mo><mo>=</mo><mn>1</mn></mrow>T(1)=1</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>N</mi><mo>)</mo><mo>=</mo><mi>T</mi><mo>(</mo><mi>N</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mo>+</mo><mn>1</mn></mrow>T(N)=T(N/2)+1</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span><span class="mrel">=</span><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathrm">1</span></span></span></span>;</li>
+<li>P2: <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mn>1</mn><mo>)</mo><mo>=</mo><mn>1</mn></mrow>T(1)=1</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">1</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><mrow><mi>T</mi><mo>(</mo><mi>N</mi><mo>)</mo><mo>=</mo><mn>2</mn><mi>T</mi><mo>(</mo><mi>N</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mo>+</mo><mn>1</mn></mrow>T(N)=2T(N/2)+1</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord mathrm">2</span><span style="margin-right:0.13889em;" class="mord mathit">T</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mord mathrm">/</span><span class="mord mathrm">2</span><span class="mclose">)</span><span class="mbin">+</span><span class="mord mathrm">1</span></span></span></span>;</li>
+</ul>
+<p>Then the correct conclusion about their time complexities is: <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques10" type="radio"> they are both <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(logN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled checked="" name="ques10" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(logN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span> for P1, and <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>O(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span> for P2</label></li>
+<li><label><input disabled name="ques10" type="radio"> they are both <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow>O(N)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span></label></li>
+<li><label><input disabled name="ques10" type="radio"> <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(logN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span> for P1, and <span class="katex"><span class="katex-mathml"><math><mrow><mi>O</mi><mo>(</mo><mi>N</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>N</mi><mo>)</mo></mrow>O(NlogN)</math></span><span aria-hidden="true" class="katex-html"><span style="height:0.75em;" class="strut"></span><span style="height:1em;vertical-align:-0.25em;" class="strut bottom"></span><span class="base textstyle uncramped"><span style="margin-right:0.02778em;" class="mord mathit">O</span><span class="mopen">(</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span style="margin-right:0.01968em;" class="mord mathit">l</span><span class="mord mathit">o</span><span style="margin-right:0.03588em;" class="mord mathit">g</span><span style="margin-right:0.10903em;" class="mord mathit">N</span><span class="mclose">)</span></span></span></span> for P2</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-6</div><div style="overflow:auto"><div><div class="ques-view"><p>For an in-order threaded binary tree, if the pre-order and in-order traversal sequences are <code>B E A C F D</code> and <code>A E C B D F</code> respectively, which pair of nodes' left links are both threads? <span class="ques-score">(4分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques11" type="radio"> B and E</label></li>
+<li><label><input disabled name="ques11" type="radio"> E and F</label></li>
+<li><label><input disabled name="ques11" type="radio"> C and F</label></li>
+<li><label><input disabled checked="" name="ques11" type="radio"> C and D</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（4 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-7</div><div style="overflow:auto"><div><div class="ques-view"><p>Suppose that an array of size <code>m</code> is used to store a circular queue.  If the front position is <code>front</code> and the current size is <code>size</code>, then the rear element must be at: <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques12" type="radio"> <code>front+size</code></label></li>
+<li><label><input disabled name="ques12" type="radio"> <code>front+size-1</code></label></li>
+<li><label><input disabled name="ques12" type="radio"> <code>(front+size)%m</code></label></li>
+<li><label><input disabled checked="" name="ques12" type="radio"> <code>(front+size-1)%m</code></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-8</div><div style="overflow:auto"><div><div class="ques-view"><p>To sort { 49, 38, 65, 97, 76, 13, 27, 50 } in increasing order, which of the following is the result after the 1st run of Shell sort with the initial increment 4? <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques13" type="radio"> 13,27,38,49,50,65,76,97</label></li>
+<li><label><input disabled checked="" name="ques13" type="radio"> 49,13,27,50,76,38,65,97</label></li>
+<li><label><input disabled name="ques13" type="radio"> 49,76,65,13,27,50,97,38</label></li>
+<li><label><input disabled name="ques13" type="radio"> 97,76,65,50,49,38,27,13</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-9</div><div style="overflow:auto"><div><div class="ques-view"><p>Insert { 3, 8, 9, 1, 2, 6 } one by one into an initially empty binary search tree.  The post-order  traversal sequence of the resulting tree is: <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques14" type="radio"> 2, 1, 3, 6, 9, 8</label></li>
+<li><label><input disabled name="ques14" type="radio"> 1, 2, 8, 6, 9, 3</label></li>
+<li><label><input disabled checked="" name="ques14" type="radio"> 2, 1, 6, 9, 8, 3</label></li>
+<li><label><input disabled name="ques14" type="radio"> 1, 2, 3, 6, 9, 8</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-10</div><div style="overflow:auto"><div><div class="ques-view"><p>In-order traversal of a binary tree can be done iteratively.  Given the stack operation sequence as the following:</p>
+<pre><code>push(1), push(2), push(3), pop(), push(4), pop(), pop(), push(5), pop(), pop(), push(6), pop()
+</code></pre><p>Which one of the following statements is TRUE? <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques15" type="radio"> 6 is the root</label></li>
+<li><label><input disabled name="ques15" type="radio"> 2 is the parent of 4</label></li>
+<li><label><input disabled checked="" name="ques15" type="radio"> 2 and 6 are siblings</label></li>
+<li><label><input disabled name="ques15" type="radio"> None of the above</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-11</div><div style="overflow:auto"><div><div class="ques-view"><p>Among the following sorting methods, which ones will be slowed down if we store the elements in a linked structure instead of a sequential structure? <span class="ques-score">(5分)</span></p>
+<ol>
+<li>Insertion sort;  2. Selection Sort;  3. Bubble sort;  4. Shell sort;  5. Heap sort</li>
+</ol>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques16" type="radio"> 1 and 2 only</label></li>
+<li><label><input disabled name="ques16" type="radio"> 2 and 3 only</label></li>
+<li><label><input disabled name="ques16" type="radio"> 3 and 4 only</label></li>
+<li><label><input disabled checked="" name="ques16" type="radio"> 4 and 5 only</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-12</div><div style="overflow:auto"><div><div class="ques-view"><p>In a complete binary tree with 1102 nodes, there must be __ leaf nodes. <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques17" type="radio"> 79</label></li>
+<li><label><input disabled checked="" name="ques17" type="radio"> 551</label></li>
+<li><label><input disabled name="ques17" type="radio"> 1063</label></li>
+<li><label><input disabled name="ques17" type="radio"> cannot be determined</label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">2-13</div><div style="overflow:auto"><div><div class="ques-view"><p>To delete <code>p</code> from a doubly linked list, we must do: <span class="ques-score">(5分)</span></p>
+<ol class="ques-answer ques-choice ques-list">
+<li><label><input disabled name="ques18" type="radio"> <code>p-&gt;prior=p-&gt;prior-&gt;prior; p-&gt;prior-&gt;next=p;</code></label></li>
+<li><label><input disabled name="ques18" type="radio"> <code>p-&gt;next-&gt;prior=p; p-&gt;next=p-&gt;next-&gt;next;</code></label></li>
+<li><label><input disabled checked="" name="ques18" type="radio"> <code>p-&gt;prior-&gt;next=p-&gt;next; p-&gt;next-&gt;prior=p-&gt;prior;</code></label></li>
+<li><label><input disabled name="ques18" type="radio"> <code>p-&gt;next=p-&gt;prior-&gt;prior; p-&gt;prior=p-&gt;next-&gt;next;</code></label></li>
+</ol>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（5 分）</span></div></div></div></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">程序填空题</span><span>得分：15</span><span style="margin-left:20px">总分：15</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">5-1</div><div style="overflow:auto"><div><div class="ques-view"><p>The function is to sort the list { <code>r[1] … r[n]</code> } in non-decreasing order.  Unlike selection sort which places only the minimum unsorted element in its correct position, this algorithm finds both the minimum and the maximum unsorted elements and places them into their final positions.</p>
+<pre><code class="lang-c++">void  sort( list r[], int n )  
+{
+   int i, j, mini, maxi;
+
+   for (i=1; i&lt;n-i+1; i++) {
+      mini = maxi = i;
+      for( j=i+1; <input disabled size="28" value="j<=n-i+1" type="text" class="ques-answer"><span class="ques-score">(3分)</span>; ++j ){
+         if( <input disabled size="28" value="r[j]->key<r[mini]->key" type="text" class="ques-answer"><span class="ques-score">(3分)</span> ) mini = j; 
+         else if(r[j]-&gt;key &gt; r[maxi]-&gt;key) maxi = j;
+      }
+      if( mini != i ) swap(&amp;r[mini], &amp;r[i]);
+      if( maxi != n-i+1 ){
+         if( <input disabled size="28" value="maxi==i" type="text" class="ques-answer"><span class="ques-score">(3分)</span> ) swap(&amp;r[mini], &amp;r[n-i+1]);
+         else swap(&amp;r[maxi], &amp;r[n-i+1]);
+      }
+   }
+} 
+</code></pre>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（9 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>序号</th><th>结果</th><th>得分</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>3</td></tr><tr><td>1</td><td>答案正确</td><td>3</td></tr><tr><td>2</td><td>答案正确</td><td>3</td></tr></tbody></table></div></div></div><hr/><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">5-2</div><div style="overflow:auto"><div><div class="ques-view"><p>The function is to find the <code>K</code>-th smallest element in a list <code>A</code> of <code>N</code> elements.  The function <code>BuildMaxHeap(H, K)</code> is to arrange elements <code>H[1]</code> ... <code>H[K]</code> into a max-heap.  Please complete the following program. </p>
+<pre><code class="lang-c++">ElementType FindKthSmallest ( int A[], int N, int K )
+{   /* it is assumed that K&lt;=N */
+    ElementType *H;
+    int i, next, child;
+
+    H = (ElementType *)malloc((K+1)*sizeof(ElementType));
+    for ( i=1; i&lt;=K; i++ ) H[i] = A[i-1];
+    BuildMaxHeap(H, K);
+
+    for ( next=K; next&lt;N; next++ ) {
+        H[0] = A[next];
+        if ( H[0] &lt; H[1] ) {
+            for ( i=1; i*2&lt;=K; i=child ) {
+                child = i*2;
+                if ( child!=K &amp;&amp; <input disabled size="23" value="H[child+1]>H[child]" type="text" class="ques-answer"><span class="ques-score">(3分)</span> ) child++;
+                if ( <input disabled size="23" value="H[0]<H[child]" type="text" class="ques-answer"><span class="ques-score">(3分)</span> )
+                    H[i] = H[child];
+                else break;
+            }
+            H[i] = H[0];
+        }
+    }
+    return H[1];
+}
+
+</code></pre>
+</div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（6 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>序号</th><th>结果</th><th>得分</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>3</td></tr><tr><td>1</td><td>答案正确</td><td>3</td></tr></tbody></table></div></div></div><hr/><div style="display:flex;font-size:18px;margin-top:24px"><span style="flex-grow:1;font-weight:bold">函数题</span><span>得分：6</span><span style="margin-left:20px">总分：6</span></div><div style="padding-bottom:8px;margin-top:24px"><div style="display:flex"><div style="margin-right:12px;white-space:nowrap">6-1</div><div style="overflow:auto"><div>No Less Than X in BST (6分)</div><div><div class="ques-view"><p>You are supposed to output, in decreasing order, all the elements no less than <code>X</code> in a binary search tree <code>T</code>.</p>
+<h3 id="format-of-function-">Format of function:</h3>
+<pre><code class="lang-c++">void Print_NLT( Tree T,  int X );
+</code></pre>
+<p>where <code>Tree</code> is defined as the following:</p>
+<pre><code class="lang-c++">typedef struct TreeNode *Tree;
+struct TreeNode {
+    int Element;
+    Tree  Left;
+    Tree  Right;
+};
+</code></pre>
+<p>The function is supposed to use <code>Output(X)</code> to print <code>X</code>.</p>
+<h3 id="sample-program-of-judge-">Sample program of judge:</h3>
+<pre><code class="lang-c++">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct TreeNode *Tree;
+struct TreeNode {
+    int Element;
+    Tree  Left;
+    Tree  Right;
+};
+
+Tree BuildTree(); /* details omitted */
+void Output( int X ); /* details omitted */
+
+void Print_NLT( Tree T,  int X );
+
+int main()
+{
+    Tree T;
+    int X;
+
+    T = BuildTree();
+    scanf("%d", &amp;X);
+    Print_NLT( T, X );
+    printf("End\n");
+
+    return 0;
+}
+
+/* Your function will be put here */
+
+</code></pre>
+<h3 id="sample-output-1-for-the-tree-shown-in-figure-1-">Sample Output 1 (for the tree shown in Figure 1):</h3>
+<pre><code class="lang-out">92 91 90 85 81 80 End
+</code></pre>
+<center>
+<img alt="" src="https://images.ptausercontent.com/91" ><br>
+
+<strong>Figure 1</strong>
+</center>
+
+<h3 id="sample-output-2-for-the-tree-shown-in-figure-2-">Sample Output 2 (for the tree shown in Figure 2):</h3>
+<pre><code>End
+</code></pre><center>
+<img alt="" src="https://images.ptausercontent.com/92" ><br>
+
+<strong>Figure 2</strong>
+</center></div>
+</div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器</div><div style="flex-grow:1;overflow:auto">GCC</div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">代码</div><div style="flex-grow:1;overflow:auto"><pre class="box">int array[10000];
+int cnt=0;
+void Print_NLT( Tree T,  int X ){
+    Inorder(T);
+    int i;
+    for(i=0;i&lt;cnt;i++){
+        if(array[i]&gt;=X) break;
+    } 
+    for(int j=cnt-1;j&gt;=i;j--) Output(array[j]);
+    return;
+}
+
+void Inorder(Tree T){
+    if(!T) return;
+    Inorder(T-&gt;Left);
+    array[cnt++]=T-&gt;Element;
+    Inorder(T-&gt;Right);
+    
+
+}</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">评测结果</div><div style="flex-grow:1;overflow:auto"><div><span style="color:#ff3b30">答案正确</span><span>（6 分）</span></div></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">编译器输出</div><div style="flex-grow:1;overflow:auto"><pre class="box">a.c: In function ‘Print_NLT’:
+a.c:63:5: warning: implicit declaration of function ‘Inorder’ [-Wimplicit-function-declaration]
+     Inorder(T);
+     ^~~~~~~
+a.c: At top level:
+a.c:72:6: warning: conflicting types for ‘Inorder’
+ void Inorder(Tree T){
+      ^~~~~~~
+a.c:63:5: note: previous implicit declaration of ‘Inorder’ was here
+     Inorder(T);
+     ^~~~~~~
+a.c: In function ‘BuildTree’:
+a.c:33:6: warning: ignoring return value of ‘scanf’, declared with attribute warn_unused_result [-Wunused-result]
+      scanf(&quot;%d&quot;, &amp;n);
+      ^~~~~~~~~~~~~~~
+a.c:35:10: warning: ignoring return value of ‘scanf’, declared with attribute warn_unused_result [-Wunused-result]
+          scanf(&quot;%d&quot;, &amp;x);
+          ^~~~~~~~~~~~~~~
+a.c: In function ‘main’:
+a.c:52:5: warning: ignoring return value of ‘scanf’, declared with attribute warn_unused_result [-Wunused-result]
+     scanf(&quot;%d&quot;, &amp;X);
+     ^~~~~~~~~~~~~~~</pre></div></div><div class="result" style="display:flex;margin-top:8px"><div style="min-width:80px;font-weight:bold">测试点得分</div><div style="flex-grow:1;overflow:auto"><table><thead><tr><th>测试点</th><th>结果</th><th>得分</th><th>耗时</th><th>内存</th></tr></thead><tbody><tr><td>0</td><td>答案正确</td><td>2</td><td>20.00 ms</td><td>204 KB</td></tr><tr><td>1</td><td>答案正确</td><td>1</td><td>24.00 ms</td><td>328 KB</td></tr><tr><td>2</td><td>答案正确</td><td>1</td><td>8.00 ms</td><td>212 KB</td></tr><tr><td>3</td><td>答案正确</td><td>1</td><td>10.00 ms</td><td>200 KB</td></tr><tr><td>4</td><td>答案正确</td><td>1</td><td>12.00 ms</td><td>204 KB</td></tr></tbody></table></div></div></div><hr/></div></div>
+
+</body>
+</html>

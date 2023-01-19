@@ -9,6 +9,52 @@
   - `Readme`包含一些对于这门课的介绍总结和经验分享等
   - 由于种种原因，仓库里并不会涉及往届的作业、实验报告等，希望大家能够自主完成作业
 - 仓库主要记录自己的学习路径，分享自己的经验，如果觉得本仓库有帮助的话，不妨点个✨ 
-- 推荐学长学姐的仓库
+- 推荐他人的仓库
   - https://github.com/Zhang-Each/CourseNoteOfZJUSE
   - 室友的仓库：https://github.com/CSWellesSun/ZJUCourse
+
+# 目录
+
+- [ZJUCourse]([RyanFcr/ZJU_Course: 浙江大学计算机课程资料整理 (github.com)](https://github.com/RyanFcr/ZJU_Course/tree/main))
+
+  - [目录](https://github.com/RyanFcr/ZJU_Course#目录)
+
+  - [大一]([ZJU_Course/大一 at main · RyanFcr/ZJU_Course (github.com)](https://github.com/RyanFcr/ZJU_Course/tree/main/大一))
+    - 
+  - [大二秋冬]([ZJU_Course/大二秋冬 at main · RyanFcr/ZJU_Course · GitHub](https://github.com/RyanFcr/ZJU_Course/tree/main/大二秋冬))
+    - 数据结构基础
+    - 人工智能基础
+    - 军理
+    - 新制度经济学
+    - 普通物理学Ⅱ（H）
+    - 概率论（H）
+    - 面向信息技术的沟通技巧
+    - 计算机系统Ⅱ
+    - 马原（H）
+  - 大二春夏
+    - 创业战略
+    - 团队沟通与领导力
+    - 密码学
+    - 数据安全与隐私保护
+    - 数据库系统
+    - 普通物理学实验 Ⅰ
+    - 管理学（ITP）
+    - 经济学
+    - 西方音乐简史
+    - 计算机系统Ⅲ
+    - 软件安全
+    - 面向对象程序设计
+    - 高尔夫球
+    - 高级数据结构与算法分析
+  - 大三秋冬
+    - Java应用技术
+    - 习概
+    - 优化基本理论与方法
+    - 商业模式
+    - 托福阅读
+    - 数据可视化导论
+    - 机器学习
+    - 毛概（H）
+    - 理论计算机科学导引
+    - 程序设计方法学
+    - 计算机网络

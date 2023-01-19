@@ -1,0 +1,179 @@
+                     16位比赛题1539.exe分析
+
+                                    Written by Black White
+                                    iceman@zju.edu.cn
+                                    June 29, 2021
+
+1. 下载Bochs虚拟机及WinImage9
+Bochs虚拟机下载链接:
+http://10.71.45.100/bhh/bochs@bw.zip
+
+winimage9下载链接:
+http://10.71.45.100/bhh/winimage9.zip
+
+2. 用WinImage打开dos.img, 把1539.exe拖到dos.img内的c:\masm中
+
+3. 启动Bochs虚拟机
+bochsdbg.exe -> load -> dos.bxrc -> start
+输入以下命令载入1539.exe, 用s-ice对1539.exe进行跟踪
+LDR c:\masm\1539.exe
+
+4. 1539.exe分析
+(1) 输入以下命令禁止硬件中断:
+R FL I; 把当前的IF反转, 即IF=0(禁止硬件中断),
+防止在解密过程中因发生int 8h时钟中断而导致待解密内容被毁;
+
+(2) s-ice常用命令:
+d ss:sp 查看ss:sp指向的数据; d=dump
+u ss:sp 查看ss:sp指向的代码; u=unassemble
+F2设置软件断点
+bpmb 地址 x; 设置硬件执行断点, x=execute
+bpmb 地址 r; 设置硬件读断点
+bpmb 地址 w; 设置硬件写断点
+bpmb 地址 rw; 设置硬件读写断点
+bpmw 用来在字(16位变量)上面设置断点
+bpmd 用来在双字(32位变量)上面设置断点
+BL 列出当前已设的断点
+X  继续执行程序
+BC * 清除断点
+?  列出全部命令
+
+(3) 输入以下命令设置硬件断点, 让1539.exe执行到第1个循环的出口
+bpmb cs:B6 x
+x
+bc *
+
+(4) 输入以下命令设置硬件断点, 让1539.exe执行到第2个循环的出口
+bpmb cs:137 x
+x
+bc *
+
+(5) 输入字符串
+067C:0137 BE0200          MOV     SI,0002
+067C:013A BF1B00          MOV     DI,001B
+067C:013D BA0000          MOV     DX,0000
+067C:0140 B40A            MOV     AH,0A
+067C:0142 CD21            INT     21; 输入0123456789ABCDEF12345678回车
+
+(6) base64: 把8bit * 3转化成6bit * 4 
+067C:014B 8A04            MOV     AL,[SI]
+067C:014D 24FC            AND     AL,FC
+067C:014F 8BD1            MOV     DX,CX
+067C:0151 B102            MOV     CL,02
+067C:0153 D2E8            SHR     AL,CL
+067C:0155 8BCA            MOV     CX,DX
+067C:0157 BB0100          MOV     BX,0001
+067C:015A E9B200          JMP     020F
+...
+067C:01A4 47              INC     DI
+067C:01A5 8A4402          MOV     AL,[SI+02]
+067C:01A8 243F            AND     AL,3F
+067C:01AA BB0400          MOV     BX,0004
+067C:01AD EB60            JMP     020F
+067C:01AF 90              NOP
+067C:01B0 47              INC     DI
+067C:01B1 83C603          ADD     SI,+03
+067C:01B4 E295            LOOP    014B
+;循环结束后, base64编码保存在ds:1B指向的内存块中
+
+(7) 左边一半10h字节异或07h、右边一半10h字节异或0Ch、左右两半交换
+067C:01B6 BF1B00          MOV     DI,001B
+067C:01B9 B91000          MOV     CX,0010
+067C:01BC 8A05            MOV     AL,[DI]
+067C:01BE 8A6510          MOV     AH,[DI+10]
+067C:01C1 3407            XOR     AL,07
+067C:01C3 80F40C          XOR     AH,0C
+067C:01C6 884510          MOV     [DI+10],AL
+067C:01C9 8825            MOV     [DI],AH
+067C:01CB 47              INC     DI
+067C:01CC E2EE            LOOP    01BC
+
+(8) 把ds:1B指向的20h个字节按奇偶下标分拆到ds:3C中
+067C:01CE BE3C00          MOV     SI,003C
+067C:01D1 BF1B00          MOV     DI,001B
+067C:01D4 B91000          MOV     CX,0010
+067C:01D7 8B05            MOV     AX,[DI]
+067C:01D9 8804            MOV     [SI],AL
+067C:01DB 886410          MOV     [SI+10],AH
+067C:01DE 83C702          ADD     DI,+02
+067C:01E1 46              INC     SI
+067C:01E2 E2F3            LOOP    01D7
+
+(9) 把ds:3C指向的内容与ds:5D指向的答案进行比较
+067C:01E4 BF3C00          MOV     DI,003C
+067C:01E7 BE5D00          MOV     SI,005D
+067C:01EA B92100          MOV     CX,0021
+067C:01ED 8A05            MOV     AL,[DI]
+067C:01EF 8A24            MOV     AH,[SI]
+067C:01F1 3AC4            CMP     AL,AH
+067C:01F3 750E            JNZ     0203
+067C:01F5 47              INC     DI
+067C:01F6 46              INC     SI
+067C:01F7 E2F4            LOOP    01ED
+
+(10) 根据步骤(9)的比较输出结果并结束程序运行
+067C:01F9 BA7E00          MOV     DX,007E; "you got it$"
+067C:01FC B409            MOV     AH,09
+067C:01FE CD21            INT     21
+067C:0200 EB08            JMP     020A
+067C:0202 90              NOP
+067C:0203 BA8900          MOV     DX,0089; "try again$"
+067C:0206 B409            MOV     AH,09
+067C:0208 CD21            INT     21
+067C:020A B8004C          MOV     AX,4C00
+067C:020D CD21            INT     21
+
+(11) 根据上述分析, 可以写出以下代码对ds:5D指向的答案进行解密:
+/* 可以在bochs enchanced debugger窗口先点菜单view->physical dump,再输入
+   以下命令把ds:5D指向的答案保存到文件c:\answer.txt中:
+   writemem "c:\answer.txt" 0x681d 0x20
+ */
+main()
+{
+   unsigned char c[0x20+1] = "EIAgVNoJfI]s]ENAH=vkHbu5@7iBCiC}";
+   unsigned char p[0x21] = {0};
+   unsigned char b[0x19] = {0};
+   unsigned char t;
+   int i, j;
+   memset(b, 0, sizeof(b));
+   memset(p, 0, sizeof(p));
+   for(i=0, j=0; i<0x10; i++, j++)
+   {
+      p[i*2] = c[j];
+      p[i*2+1] = c[j+0x10];
+   }
+   for(i=0; i<0x10; i++)
+   {
+      t = p[i];
+      p[i] = p[i+0x10];
+      p[i+0x10] = t;
+      p[i] ^= 0x07;
+      p[i+0x10] ^= 0x0C;
+   }
+   for(i=0; i<0x20; i++)
+   {
+      if(p[i] == 0x2B)
+         p[i] = 0x3E;
+      else if(p[i] == 0x2F)
+         p[i] = 0x3F;
+      else if(p[i] >= 0x61)
+         p[i] -= (0x61-0x1A);
+      else if(p[i] >= 0x41)
+         p[i] -= 0x41;
+      else
+         p[i] -= (0x30-0x34);
+   }
+   j = 0;
+   for(i=0; i<8; i++)
+   {
+      b[j] |= (p[i*4] << 2) & 0xFC;
+      b[j] |= (p[i*4+1] >> 4) & 0x03;
+      b[j+1] |= (p[i*4+1] << 4) & 0xF0;
+      b[j+1] |= (p[i*4+2] >> 2) & 0x0F;
+      b[j+2] |= (p[i*4+2] << 6) & 0xC0;
+      b[j+2] |= p[i*4+3] & 0x3F;
+      j += 3;
+   }
+   puts(b); /* hctf{Dd0g 1s 1539 d0gs!} */
+}
+
