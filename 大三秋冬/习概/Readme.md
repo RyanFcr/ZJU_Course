@@ -8,4 +8,4 @@
 
 ## 笔记
 
-笔记：https://k5ms77k0o1.feishu.cn/docx/RKz1dnIPGo7E4TxxqP1ceFnKnDg
+笔记：https://k5ms77k0o1.feishu.cn/wiki/space/7191845069962362882?ccm_open_type=lark_wiki_spaceLink
