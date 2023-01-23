@@ -10,4 +10,4 @@
 
 ## 笔记
 
-笔记：[‍‬‬⁢‌﻿‍⁣‌‍⁤⁢⁣⁢⁢⁢⁤⁤‬⁢⁤‌⁡‌⁢⁡﻿﻿⁡﻿⁣⁡⁡⁤⁡⁢‬⁡‬⁢⁢⁢商业模式笔记 - 飞书云文档 (feishu.cn)](https://k5ms77k0o1.feishu.cn/docx/M7QDdSeN7oJeoxxkBKOcwaGDn5f)
+笔记：https://k5ms77k0o1.feishu.cn/wiki/space/7191845069962362882?ccm_open_type=lark_wiki_spaceLink
