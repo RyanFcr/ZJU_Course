@@ -14,4 +14,4 @@ PPL这门课经过了2022-2023学年改版之后，应该称之为编程语言�
 
 笔记链接于下方飞书链接，但是记的不多，更多的内容直接记在书上了，个人也推荐大家可以直接记在书上。
 
-https://k5ms77k0o1.feishu.cn/docx/G9lAdgjWPoMeVgxUdd2cpEUXnth
+https://k5ms77k0o1.feishu.cn/wiki/space/7191845069962362882?ccm_open_type=lark_wiki_spaceLink

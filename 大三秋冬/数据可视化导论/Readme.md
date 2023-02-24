@@ -9,6 +9,6 @@
 
 ## 笔记
 
-笔记：https://k5ms77k0o1.feishu.cn/docx/Bzh2dRZv0o6rDPx41zBcywSbnMf
+笔记：https://k5ms77k0o1.feishu.cn/wiki/space/7191845069962362882?ccm_open_type=lark_wiki_spaceLink
 
 > 后面好几节课都还没听，在2023这个寒假笔者会开启学习前端之路，到时候也会分享笔记，感兴趣可以查看这个，未来会在这里上传笔记：RyanFcr/Notes4CS: Here are some notes or labs for some open courses (github.com)](https://github.com/RyanFcr/Notes4CS)

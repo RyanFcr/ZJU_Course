@@ -10,4 +10,4 @@ Java这门课的设计有很大的问题，无关老师，课程内容太多且�
 
 > Java笔记应该是我这个学期记得最全的
 
-笔记：https://k5ms77k0o1.feishu.cn/docx/IWtpdDFwgopcILx8BtjczeZanqh
+笔记：https://k5ms77k0o1.feishu.cn/wiki/space/7191845069962362882?ccm_open_type=lark_wiki_spaceLink

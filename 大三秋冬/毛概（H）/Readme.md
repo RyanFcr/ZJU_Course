@@ -12,4 +12,4 @@
 
 笔记链接（是看老版的mooc，参考价值不大，可以看习思想前面的，后面习思想有关的我都没记）：
 
-[‍‌⁢⁡‌‌⁢⁡⁣﻿‍⁤‌⁢‬‍﻿‍⁤⁢⁡‬‍⁡‌⁣‬⁢⁡⁢‬⁡⁤⁣‬﻿⁡⁣⁡⁢‌‍‬毛概笔记 - 飞书云文档 (feishu.cn)](https://k5ms77k0o1.feishu.cn/docx/CJmvdkzufooWGNx3TBqcwHSTnou)
+https://k5ms77k0o1.feishu.cn/wiki/space/7191845069962362882?ccm_open_type=lark_wiki_spaceLink
