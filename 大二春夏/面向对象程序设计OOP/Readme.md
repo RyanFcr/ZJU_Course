@@ -5,5 +5,5 @@
 不过说回来，真oop还得是数据库的minisql
 
 - github仓库里放了笔记，课件和历年卷
-- 这里放一些我们沟通技巧群友集体复习时候的错题合集https://k5ms77k0o1.feishu.cn/docs/doccnXA6djf8J9rFktrYIMeAKod
+- 这里放一些我们沟通技巧群友集体复习时候的[错题合集](https://k5ms77k0o1.feishu.cn/wiki/wikcnH7YKB6KFCwCXgRdXk2MZAf)
 
