@@ -12,6 +12,7 @@
 - 推荐他人的仓库
   - https://github.com/Zhang-Each/CourseNoteOfZJUSE
   - 室友的仓库：https://github.com/CSWellesSun/ZJUCourse
+  - ZJU ISEE：[ZJU ISEE (zju-isee.github.io)](https://zju-isee.github.io/zju-isee/)
 
 # 目录
 
